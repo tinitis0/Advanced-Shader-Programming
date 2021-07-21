@@ -1,0 +1,10 @@
+﻿  Source.cpp
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(134): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(257): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(258): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(262): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(263): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(265): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(266): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\tinst\onedrive\desktop\new folder\terrain\terrain\src\source.cpp(279): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Terrain.vcxproj -> C:\Users\tinst\OneDrive\Desktop\New folder\Terrain\Debug\Terrain.exe

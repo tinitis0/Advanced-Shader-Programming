@@ -1,0 +1,64 @@
+
+#version 450 core
+layout (vertices =3) out;
+
+float GetTessLevel(float Dist0, float Dist1);
+
+uniform vec3 camPos;
+
+
+in vec3 fragPos[] ;
+in vec2 textCoord[] ;
+in vec4 FragPosLightSpace[] ;
+
+out vec3 posTC[] ;
+out vec2 textTC[] ;
+out vec4 FragPosLightSpaceTC[] ;
+
+void main()
+{     	 
+
+
+		 float camToVertexDist0 = distance(camPos, fragPos[0]);
+		 float camToVertexDist1 = distance(camPos, fragPos[1]);
+		 float camToVertexDist2 = distance(camPos, fragPos[2]);		
+		 
+         gl_TessLevelOuter[0] = GetTessLevel(camToVertexDist1, camToVertexDist2); 
+         gl_TessLevelOuter[1] = GetTessLevel(camToVertexDist2, camToVertexDist0); 
+         gl_TessLevelOuter[2] = GetTessLevel(camToVertexDist0, camToVertexDist1); 
+         gl_TessLevelInner[0] = gl_TessLevelOuter[2] ; 
+
+		 FragPosLightSpaceTC[gl_InvocationID] = FragPosLightSpace[gl_InvocationID];
+
+
+   posTC[gl_InvocationID]  = fragPos[gl_InvocationID] ;
+   textTC[gl_InvocationID] = textCoord[gl_InvocationID] ;
+  
+}
+
+float GetTessLevel(float Dist0, float Dist1)
+{
+	float AvgDist = (Dist0 + Dist1) / 2.0f;
+
+	if(AvgDist <80)
+	return 66;
+	else if(AvgDist < 120)
+	return 55;
+	else if(AvgDist < 150)
+	return 45;
+	else if(AvgDist < 180)
+	return 36;
+	else if(AvgDist < 200)
+	return 28;
+	else if(AvgDist < 250)
+	return 21;
+	else if(AvgDist < 300)
+	return 15;
+	else if(AvgDist < 350)
+	return 10;
+	else if(AvgDist < 400)
+	return 6;
+	else
+	return 3;
+
+}
